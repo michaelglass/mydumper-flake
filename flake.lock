@@ -18,41 +18,7 @@
         "type": "github"
       }
     },
-    "michaelglass-nur": {
-      "inputs": {
-        "nixpkgs": "nixpkgs"
-      },
-      "locked": {
-        "lastModified": 1720517949,
-        "narHash": "sha256-4BgEKYDVynopmqvsAkwTpieqJANamAj0NGNeHppTJoM=",
-        "owner": "michaelglass",
-        "repo": "nur-packages",
-        "rev": "c0abc18c6794a18c04999c0ac7a92db045f058bd",
-        "type": "github"
-      },
-      "original": {
-        "owner": "michaelglass",
-        "repo": "nur-packages",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
-      "locked": {
-        "lastModified": 1720498663,
-        "narHash": "sha256-juqJkkdAt44mOfA43q1qUHn7iWoK++81lR8Mh7N/EF8=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "106e145e1d4583d1e2bb20e54947d15ad55e75e1",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixpkgs-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_2": {
       "locked": {
         "lastModified": 1720386169,
         "narHash": "sha256-NGKVY4PjzwAa4upkGtAMz1npHGoRzWotlSnVlqI40mo=",
@@ -68,11 +34,26 @@
         "type": "github"
       }
     },
+    "nur": {
+      "locked": {
+        "lastModified": 1720521897,
+        "narHash": "sha256-k/lSErCNGvHj/vI+TXHLuQI9pmEnQBVcKbV3yB3I8NQ=",
+        "owner": "nix-community",
+        "repo": "NUR",
+        "rev": "4cb066aae41593df9901910e45f9dfd1af5aa743",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "NUR",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
-        "michaelglass-nur": "michaelglass-nur",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs",
+        "nur": "nur"
       }
     },
     "systems": {

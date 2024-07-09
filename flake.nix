@@ -4,13 +4,13 @@
 
   inputs.flake-utils.url = "github:numtide/flake-utils";
   inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
-  inputs.michaelglass-nur.url = "github:michaelglass/nur-packages";
+  inputs.nur.url = "github:nix-community/NUR";
 
   outputs =
     { self
     , nixpkgs
     , flake-utils
-    , michaelglass-nur
+    , nur
     }:
     flake-utils.lib.eachDefaultSystem (system:
     let
@@ -23,16 +23,14 @@
       pkgs = import nixpkgs
         {
           system = system;
-          overlays = [
-            (final: prev: { mydumper = michaelglass-nur.packages.${system}.mydumper; })
-          ];
+          overlays = [ nur.overlay ];
         };
     in
     {
       formatter = pkgs.nixpkgs-fmt;
       devShells.default = pkgs.mkShell {
         packages = [
-          (assertVersion "0.16.3-6" pkgs.mydumper)
+          (assertVersion "0.16.3-6" pkgs.nur.repos.michaelglass.mydumper)
         ];
       };
     });
